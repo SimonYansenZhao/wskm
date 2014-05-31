@@ -1,0 +1,92 @@
+wskm (1.4.0) unstable; urgency=low
+
+  * Add predict.ewkm
+
+  * Update author infos
+
+wskm (1.3.0) unstable; urgency=low
+
+  * Change name to be descriptive rather than non-informative.
+
+  * Update documentation.
+
+  * Update ewkm.c to call error() rather than printf() on errors; add two algorithms fgkm and twkm.
+
+  * Include sum of squares data in returned value.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Mon, 23 Apr 2012 05:45:19 +1000
+
+wskm (1.2.0) unstable; urgency=low
+
+  * Change name to be descriptive rather than non-informative.
+
+  * Update documentation.
+
+  * Update ewkm.c to call error() rather than printf() on errors.
+
+  * Include sum of squares data in returned value.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Mon, 23 Apr 2012 05:45:19 +1000
+
+siatclust (1.0.5) unstable; urgency=low
+
+  * Add new algorithm fgkm() and sample dataset fgkm.sample.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Wed, 16 Nov 2011 18:39:53 +1100
+
+siatclust (1.0.4) unstable; urgency=low
+
+  * Support both plot.ewkm() and levelplot.ewkm().
+
+  * Both plot functions accept additional arguments that are passed
+    through to the underlying plotters.
+
+  * Note in ewkm.Rd that the class of the returned object is "ewkm" as
+    well as "kmeans".
+
+  * Add a "see also" to the man page for ewkm.
+
+  * Changes suggested by Felix Andrews.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Thu, 08 Sep 2011 06:29:47 +1000
+
+siatclust (1.0.3) unstable; urgency=low
+
+  * Add a generic plot to show a heatmap of the weights.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Thu, 04 Aug 2011 19:54:47 +1000
+
+siatclust (1.0.2) unstable; urgency=low
+
+  * Simplify directory structure for the package.
+
+  * Introduce maxrestart to control the number of restarts when there are
+    fewer clusters than requested.
+
+  * Remove empty clusters from the returned clustering, as might happen
+    when fewer than the requested clusters were found and the maximum
+    iteration and maximum number of restarts were reached.
+
+  * Add tests for automated testing.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Sat, 23 Jul 2011 21:30:38 +1000
+
+siatclust (1.0.1) unstable; urgency=low
+
+  * Add some basic testing to the package: make tests.
+
+  * Random seed functionality working in harmony with R. Thus set.seed in
+    R will ensure the same model is built.
+
+  * Previous version could return emtpy clusters. This version will
+    restart the algorithm when empty clusters are encountered. The number
+    of restarts is returned along with the total number of iterations.
+
+ -- Graham Williams <Graham.Williams@togaware.com>  Sun, 17 Jul 2011 13:06:36 +1000
+
+siatclust (1.0.0) unstable; urgency=low
+
+  * Initial Release.
+
+-- Graham Williams <Graham.Williams@togaware.com>  Sun, 3 Jul 2011 13:06:36 +1000
+
