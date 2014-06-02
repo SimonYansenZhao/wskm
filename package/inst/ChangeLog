@@ -1,4 +1,4 @@
-wskm (1.4.3) unstable; urgency=low
+wskm (1.4.4) unstable; urgency=low
 
   * Fix bug: src/ewkm.c:288: runtime error: value 1.79769e+308 is
 	outside the range of representable values of type 'float'
