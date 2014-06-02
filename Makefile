@@ -1,5 +1,5 @@
 APP=wskm
-VER=1.4.0
+VER=1.4.$(shell git rev-list --count HEAD)
 DATE=$(shell date +%Y-%m-%d)
 
 ######################################################################

@@ -285,7 +285,7 @@ void ewkm( // Inputs ----------------------------------------------------------
 
 	int iteration; // Count of iterations.
 
-	float dispersion = 1.79769e+308, dispersion1 = 1.79769e+308; // Objective function value.
+	float dispersion = FLT_MAX, dispersion1 = FLT_MAX; // Objective function value.
 
 	//TODO enable it for R
 	// Read in (or create) .Random.seed, the R random number data, and
