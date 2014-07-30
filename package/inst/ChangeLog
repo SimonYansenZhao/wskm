@@ -1,4 +1,4 @@
-wskm (1.4.8) unstable; urgency=low
+wskm (1.4.9) unstable; urgency=low
 
   * Support initialising ewkm with initial centers, much like kmeans
 

@@ -12,14 +12,14 @@
 }
 \usage{
 
- ewkm(x, centers, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
+ ewkm(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
 
 }
 \arguments{
 
   \item{x}{numeric matrix of observations and variables.}
 
-  \item{centers}{target number of clusters or the initial centers for
+  \item{k}{target number of clusters or the initial centers for
   clustering.}
 
   \item{lambda}{parameter for variable weight distribution.}

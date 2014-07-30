@@ -24,7 +24,7 @@ ewkm <- function(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
           maxiter=as.integer(maxiter),
           delta=as.double(delta),
           maxrestart=as.integer(maxrestart),
-          init=as.double(as.matrix(init)),
+          init=ifelse(exists("init"), as.double(as.matrix(init)), as.double(0)),
           iterations=integer(1),
           cluster=integer(nr),
           centers=double(k * nc),
