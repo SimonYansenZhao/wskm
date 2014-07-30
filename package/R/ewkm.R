@@ -1,7 +1,13 @@
 ewkm <- function(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
 {
   if (missing(k)) 
-    stop("the number of clusters 'k' must be provided")
+    stop("the number or initial clusters 'k' must be provided")
+
+  if (is.data.frame(k) || is.matrix(k))
+  {
+    init <- k
+    k <- nrow(init)
+  }
   
   vars <- colnames(x)
 
@@ -18,6 +24,7 @@ ewkm <- function(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
           maxiter=as.integer(maxiter),
           delta=as.double(delta),
           maxrestart=as.integer(maxrestart),
+          init=as.double(as.matrix(init)),
           iterations=integer(1),
           cluster=integer(nr),
           centers=double(k * nc),
@@ -70,6 +77,5 @@ ewkm <- function(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
   class(result) <- c("ewkm", "kmeans")
 
   return(result)
-#  return(Z)
 }
 

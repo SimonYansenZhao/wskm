@@ -1,3 +1,7 @@
+wskm (1.4.8) unstable; urgency=low
+
+  * Support initialising ewkm with initial centers, much like kmeans
+
 wskm (1.4.7) unstable; urgency=low
 
   * Fix bug: src/ewkm.c:288: runtime error: value 1.79769e+308 is

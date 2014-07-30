@@ -12,14 +12,15 @@
 }
 \usage{
 
- ewkm(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
+ ewkm(x, centers, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
 
 }
 \arguments{
 
   \item{x}{numeric matrix of observations and variables.}
 
-  \item{k}{target number of clusters.}
+  \item{centers}{target number of clusters or the initial centers for
+  clustering.}
 
   \item{lambda}{parameter for variable weight distribution.}
 
@@ -122,7 +123,7 @@
 }
 \examples{
 
-myewkm <- ewkm(iris[1:4], k=3, lambda=0.5, maxiter=100)
+myewkm <- ewkm(iris[1:4], 3, lambda=0.5, maxiter=100)
 
 plot(iris[1:4], col=myewkm$cluster)
 
