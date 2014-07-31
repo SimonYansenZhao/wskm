@@ -1,6 +1,8 @@
-wskm (1.4.9) unstable; urgency=low
+wskm (1.4.11) unstable; urgency=low
 
-  * Support initialising ewkm with initial centers, much like kmeans
+  * Support initialising ewkm, fgkm, twkm with initial centers, much like kmeans
+
+  * Change the name of argument for the number of clusters from "k" to "centers"
 
 wskm (1.4.7) unstable; urgency=low
 

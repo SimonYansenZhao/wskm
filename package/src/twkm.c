@@ -247,7 +247,7 @@ double twkm_calculate_cost(const double *x, const int *nr, const int *nc,
 void twkm(const double *x, const int *nr, const int *nc, const int *k,
 		const double *lambda, const double *eta, const int *numGroups,
 		const int *groupInfo, const double *delta, const int *maxiter,
-		const int *maxrestart, double *init, unsigned int *seed, int *cluster,
+		const int *maxrestart, int *init, unsigned int *seed, int *cluster,
 		double *centers, double *featureWeight, double *groupWeight,
 		int *iterations, int *restarts, int *totiter, double *totalCost, //
 		double *totss, //    total sum of squares
@@ -264,11 +264,8 @@ void twkm(const double *x, const int *nr, const int *nc, const int *k,
 	srand(seed);
 
 	while ((*restarts) < *maxrestart) {
-		if (*init == 0) {
+		if (*init == 0)
 		  init_centers(x, nr, nc, k, centers); // assign randomly
-		} else {
-		  memcpy(centers, init, (*k) * (*nc));
-		}
 
 		twkm_init_featureWeight(featureWeight, nc, numGroups, groupInfo); // equal value
 		twkm_init_groupWeight(groupWeight, numGroups); // equal value

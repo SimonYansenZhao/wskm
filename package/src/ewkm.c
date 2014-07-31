@@ -273,7 +273,7 @@ void ewkm( // Inputs ----------------------------------------------------------
 		int *maxiter, 	// Maximum number of iterations
 		double *delta, 	// Minimum change below which iteration stops
 		int *maxrestart,      // Maximum number of restarts
-		double *init,            // Initial k prototypes.
+		int *init,            // Initial k prototypes.
 		// Outputs ---------------------------------------------------------
 		int *iterations,	// Number of iterations
 		int *cluster, 	// Cluster assignment for each obs (nr)
@@ -302,11 +302,8 @@ void ewkm( // Inputs ----------------------------------------------------------
 	// indicies as the row indicies for the initial protoypes. A
 	// single 0 indicates to use random initialisation.
 
-	if (*init == 0) {
+	if (*init == 0)
 	  initPrototypes(x, nr, nc, k, centers);
-	} else {
-	  memcpy(centers, init, (*k) * (*nc));
-	}
 	
 	// Initialize the feature weights of a cluster.
 

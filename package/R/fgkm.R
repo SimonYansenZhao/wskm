@@ -1,13 +1,7 @@
-fgkm <- function(x, k, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxrestart=10,seed=-1) 
+fgkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxrestart=10,seed=-1) 
 {
-  if (missing(k))
-    stop("the number or initial clusters 'k' must be provided")
-
-  if (is.data.frame(k) || is.matrix(k))
-  {
-    init <- k
-    k <- nrow(init)
-  }
+  if (missing(centers))
+    stop("the number or initial clusters 'centers' must be provided")
 
   if(seed<=0){
     seed <-runif(1,0,10000000)[1]
@@ -17,6 +11,18 @@ fgkm <- function(x, k, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxre
   
   nr <-nrow(x) # nrow() return a integer type
   nc <-ncol(x) # integer
+
+  if (is.data.frame(centers) || is.matrix(centers))
+  {
+    init <- TRUE
+    k <- nrow(centers)
+  }
+  else
+  {
+    init <- FALSE
+    k <- centers
+    centers <- double(k * nc)
+  }
   
   # get the setting of feature group
   G <- .C("parseGroup",as.character(strGroup),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
@@ -34,10 +40,10 @@ fgkm <- function(x, k, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxre
           delta = as.double(delta),
           maxIterations = as.integer(maxiter),
           maxRestarts = as.integer(maxrestart),
-          init=ifelse(exists("init"), as.double(as.matrix(init)), as.double(0)),
+          as.logical(init),
           seed,
           cluster = integer(nr),
-          centers = double(k * nc),
+          centers=as.double(as.matrix(centers)),
           featureWeight = double(k * nc),
           groupWeight = double(k * G$numGroups),
           iterations = integer(1),

@@ -1,18 +1,24 @@
-ewkm <- function(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
+ewkm <- function(x, centers, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
 {
-  if (missing(k)) 
-    stop("the number or initial clusters 'k' must be provided")
-
-  if (is.data.frame(k) || is.matrix(k))
-  {
-    init <- k
-    k <- nrow(init)
-  }
+  if (missing(centers)) 
+    stop("the number or initial clusters 'centers' must be provided")
   
   vars <- colnames(x)
-
   nr <- as.integer(nrow(x))
   nc <- as.integer(ncol(x))
+
+  if (is.data.frame(centers) || is.matrix(centers))
+  {
+    init <- TRUE
+    k <- nrow(centers)
+  }
+  else
+  {
+    init <- FALSE
+    k <- centers
+    centers <- double(k * nc)
+  }
+
   k <- as.integer(k)
   
   Z <- .C("ewkm",
@@ -24,10 +30,10 @@ ewkm <- function(x, k, lambda=1, maxiter=100, delta=0.00001, maxrestart=10)
           maxiter=as.integer(maxiter),
           delta=as.double(delta),
           maxrestart=as.integer(maxrestart),
-          init=ifelse(exists("init"), as.double(as.matrix(init)), as.double(0)),
+          as.logical(init),
           iterations=integer(1),
           cluster=integer(nr),
-          centers=double(k * nc),
+          centers=as.double(as.matrix(centers)),
           weights=double(k * nc),
           restarts=integer(1),
           totiters=integer(1),

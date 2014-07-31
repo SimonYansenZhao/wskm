@@ -7,11 +7,12 @@
   Two-level variable weighting clustering.
 }
 \usage{
-  twkm(x, k, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxrestart=10,seed=-1)
+  twkm(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
+       maxrestart=10,seed=-1)
 }
 \arguments{
   \item{x}{numeric matrix of observations and features.}
-  \item{k}{target number of clusters or the initial centers for
+  \item{centers}{target number of clusters or the initial centers for
     clustering.}
   \item{strGroup}{a string give the group information, formatted as "0,1,2,4;3,5;6,7,8" or "0-2,4;3,4,8;6-8", where ";" defines a group}
   \item{lambda}{parameter of feature weight distribution.}

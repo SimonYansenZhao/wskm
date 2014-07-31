@@ -50,7 +50,7 @@
 }
 \examples{
 
-myewkm <- ewkm(iris[1:4], k=3, lambda=0.5, maxiter=100)
+myewkm <- ewkm(iris[1:4], 3, lambda=0.5, maxiter=100)
 
 plot(myewkm)
 
