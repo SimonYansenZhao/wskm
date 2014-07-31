@@ -1,8 +1,14 @@
 twkm <- function(x, k, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxrestart=10,seed=-1) 
 {
   if (missing(k))
-    stop("the number of clusters 'k' must be provided")
-   
+    stop("the number or initial clusters 'k' must be provided")
+
+  if (is.data.frame(k) || is.matrix(k))
+  {
+    init <- k
+    k <- nrow(init)
+  }
+
   if(seed<=0){
     seed <-runif(1,0,10000000)[1]
   }
@@ -28,6 +34,7 @@ twkm <- function(x, k, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxre
           delta = as.double(delta),
           maxIterations = as.integer(maxiter),
           maxRestarts = as.integer(maxrestart),
+          init=ifelse(exists("init"), as.double(as.matrix(init)), as.double(0)),
           seed,
           cluster = integer(nr),
           centers = double(k * nc),
