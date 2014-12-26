@@ -223,7 +223,8 @@ void init_centers(const double *x, const int *nr, const int *nc, const int *k,
 		flag = 1;
 
 		while (flag) {
-			index = (int) (rand() % (*nr));
+		  // index = (int) (rand() % (*nr));
+			index = (int) (*nr-1) * unif_rand();
 			flag = 0;
 			for (i = 0; i < l; i++) {
 				if (random_obj_num[i] == index)

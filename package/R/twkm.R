@@ -6,7 +6,7 @@ twkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
   if(seed<=0){
     seed <-runif(1,0,10000000)[1]
   }
-    
+
   vars <- colnames(x)
   
   nr <-nrow(x) # nrow() return a integer type
@@ -24,10 +24,19 @@ twkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
     centers <- double(k * nc)
   }
   
- # get the setting of feature group
-  G <- .C("parseGroup",as.character(strGroup),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
-  
-  
+  # get the setting of feature group
+  if (is.character(strGroup)) {
+    G <- .C("parseGroup",as.character(strGroup),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
+    #print(G$groupInfo)
+  }
+  else if (is.vector(strGroup) && length(strGroup) == nc) {
+    G <- list()
+    G$numGroups <- length(unique(strGroup))
+    G$groupInfo <- as.vector(strGroup, mode="integer")
+    #print(G$groupInfo)
+  }
+
+  set.seed(seed)
   Z <- .C("twkm",
           x = as.double(as.matrix(x)),
           nr,
@@ -41,7 +50,7 @@ twkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
           maxIterations = as.integer(maxiter),
           maxRestarts = as.integer(maxrestart),
           as.logical(init),
-          seed,
+#          seed,
           cluster = integer(nr),
           centers=as.double(as.matrix(centers)),
           featureWeight = double( nc),
