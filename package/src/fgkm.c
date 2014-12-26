@@ -78,7 +78,6 @@ int update_centers(const double *x, const int *nr, const int *nc, const int *k,
 	}
 
 	for (l = 0; l < *k; l++) {
-		no_cluster[l] = 0;
 		for (j = 0; j < *nc; j++) {
 			centers[j * (*k) + l] = 0.0;
 		}
@@ -131,6 +130,8 @@ void update_featureWeight(const double *x, const int *nr, const int *nc,
 	max = (double*) malloc(*numGroups * sizeof(double));
 
 	for (t = 0; t < *numGroups; t++) {
+		sum[t] = 0;
+		sum2[t] = 0;
 		max[t] = -1.79769e+308;
 	}
 

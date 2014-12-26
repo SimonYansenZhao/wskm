@@ -39,7 +39,7 @@ void twkm_init_featureWeight(double *featureWeight, const int *nc,
 		const int *numGroups, const int *groupInfo) {
 
 	int j, *nums;
-	nums = (int *) calloc(numGroups, sizeof(int));
+	nums = (int *) calloc(*numGroups, sizeof(int));
 	for (j = 0; j < *nc; ++j) {
 		nums[groupInfo[j]]++;
 	}
@@ -135,6 +135,8 @@ void twkm_update_featureWeight(const double *x, const int *nr, const int *nc,
 	max = (double*) malloc(*numGroups * sizeof(double));
 
 	for (t = 0; t < *numGroups; t++) {
+		sum[t] = 0;
+		sum2[t] = 0;
 		max[t] = -1.79769e+308;
 	}
 
