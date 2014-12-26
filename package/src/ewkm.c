@@ -64,7 +64,8 @@ void initPrototypes( // Inputs ---------------------------------------------
 		flag = 1;
 
 		while (flag) {
-			index = (int) (rand() % (*nr));
+		  //    index = (int) (rand() % (*nr));
+			index = (int) (*nr-1) * unif_rand();
 			flag = 0;
 			for (i = 0; i < l; i++)
 				if (random_obj_num[i] == index)
@@ -296,7 +297,7 @@ void ewkm( // Inputs ----------------------------------------------------------
 
 	//TODO enable it for R
 	// Initialise a rand sequence.
-	srand(unif_rand() * RAND_MAX);
+	//	srand(unif_rand() * RAND_MAX);
 
 	// Initialize the prototypes. The user can pass in a list of k
 	// indicies as the row indicies for the initial protoypes. A
@@ -317,8 +318,6 @@ void ewkm( // Inputs ----------------------------------------------------------
 	*restarts = 0;
 
 	while (++iteration <= *maxiter) {
-		//TODO Remove this for R
-		Rprintf(".");
 		dispersion = dispersion1;
 
 		updPartition(x, nr, nc, k, centers, weights, cluster);
@@ -358,9 +357,6 @@ void ewkm( // Inputs ----------------------------------------------------------
 		if (fabs(dispersion - dispersion1) / dispersion1 < *delta)
 			break;
 	}
-
-	// Remove this for R.
-	Rprintf("Converged.\n");
 
 	// Record results in output variables for passing back to R.
 
