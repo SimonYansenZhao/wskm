@@ -15,9 +15,12 @@
   \item{centers}{target number of clusters or the initial centers for
     clustering.}
   \item{groups}{a string give the group information, formatted as
-    "0,1,2,4;3,5;6,7,8" or "0-2,4;3,5;6-8", where ";" defines a group;
-    or a vector of length of features, each element of the vector
-    indicates the group of the feature.}
+    \code{"0,1,2,4;3,5;6,7,8"} or \code{"0-2,4;3,5;6-8"}, where
+    \code{";"} defines a group; or a vector of length of features, each
+    element of the vector indicates the group of the feature. For
+    example, \code{c(1,1,1,2,1,2,3,3,3)} is the same as
+    \code{"0-2,4;3,5;6-8"}, or even
+    \code{c("a","a","a","b","a","b","c","c","c")}.}
   \item{lambda}{parameter of feature weight distribution.}
   \item{eta}{parameter of group weight distribution.}
   \item{delta}{maximum change allowed between iterations for convergence.}
@@ -110,10 +113,14 @@ x <- scale(twkm.sample[,1:409])
 # Group information is formated as below.
 # Each group is separated by ';'.
 strGroup <- "0-75;76-291;292-355;356-402;403-408"
+groups <- c(rep(0, abs(0-75-1)), rep(1, abs(76-291-1)), rep(2, abs(292-355-1)),
+            rep(3, abs(356-402-1)), rep(4, abs(403-408-1)))
 
 \donttest{
 # Use the twkm algorithm.
-mytwkm <- twkm(x, 10, strGroup, 3, 1)
+mytwkm <- twkm(x, 10, strGroup, 3, 1, seed=19)
+mytwkm2 <- twkm(x, 10, groups, 3, 1, seed=19)
+all.equal(mytwkm, mytwkm2)
 
 # You can print the clustering result now.
 mytwkm$cluster
