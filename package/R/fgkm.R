@@ -1,4 +1,4 @@
-fgkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001, maxrestart=10,seed=-1) 
+fgkm <- function(x, centers, groups, lambda, eta, maxiter=100, delta=0.000001, maxrestart=10,seed=-1) 
 {
   if (missing(centers))
     stop("the number or initial clusters 'centers' must be provided")
@@ -25,12 +25,14 @@ fgkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
   }
   
   # get the setting of feature group
-  if (is.character(strGroup)) {
-    G <- .C("parseGroup",as.character(strGroup),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
-  } else if (is.vector(strGroup) && length(strGroup) == nc) {
+  if (is.character(groups) && length(groups) == 1) {
+    G <- .C("parseGroup",as.character(groups),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
+  } else if (is.vector(groups) && length(groups) == nc) {
     G <- list()
-    G$numGroups <- length(unique(strGroup))
-    G$groupInfo <- as.vector(strGroup, mode="integer")
+    grps <- as.factor(groups)
+    groupNames <- levels(grps)
+    G$numGroups <- nlevels(grps)
+    G$groupInfo <- as.integer(as.integer(grps) - 1)
   }
 
   set.seed(seed)
@@ -96,7 +98,7 @@ fgkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
                  size = size,
                  iterations = Z$iterations,
                  restarts = Z$restarts,
-		 totiters=Z$totiters,
+                 totiters=Z$totiters,
                  featureWeight = Z$featureWeight,
                  groupWeight = Z$groupWeight)
   
