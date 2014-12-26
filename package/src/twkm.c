@@ -312,7 +312,7 @@ void twkm(const double *x, const int *nr, const int *nc, const int *k,
 				 */
 				sum_squares(x, nr, nc, k, cluster, centers, totss, withiness);
 				// Done.
-
+				PutRNGstate();
 				return;
 			}
 		}

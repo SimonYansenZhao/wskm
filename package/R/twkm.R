@@ -27,13 +27,10 @@ twkm <- function(x, centers, strGroup, lambda, eta, maxiter=100, delta=0.000001,
   # get the setting of feature group
   if (is.character(strGroup)) {
     G <- .C("parseGroup",as.character(strGroup),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
-    #print(G$groupInfo)
-  }
-  else if (is.vector(strGroup) && length(strGroup) == nc) {
+  } else if (is.vector(strGroup) && length(strGroup) == nc) {
     G <- list()
     G$numGroups <- length(unique(strGroup))
     G$groupInfo <- as.vector(strGroup, mode="integer")
-    #print(G$groupInfo)
   }
 
   set.seed(seed)

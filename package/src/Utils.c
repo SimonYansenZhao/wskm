@@ -83,7 +83,7 @@ void sum_squares(const double *x, // Data matrix
 	return;
 }
 
-void parseGroup(const char *strGroup, // string of group information, formatted as "0,1,2,4;3,5;6,7,8" or "0-2,4;3,4,8;6-8", where ";" defines a group;
+void parseGroup(const char **strGroup, // string of group information, formatted as "0,1,2,4;3,5;6,7,8" or "0-2,4;3,4,8;6-8", where ";" defines a group;
 		int *numGroups, // no. of groups
 		int *groupInfo // group assignment
 		) {
@@ -98,13 +98,13 @@ void parseGroup(const char *strGroup, // string of group information, formatted 
 	//  2: range
 	short status = -1;
 
-	length = strlen(strGroup);
+	length = strlen(strGroup[0]);
 	*numGroups = 0;
 
 	p1 = &buffer[0];
 	status = 0;
 	while (i < length) {
-		switch (strGroup[i]) {
+		switch (strGroup[0][i]) {
 		case '-':
 			switch (status) {
 			case 1:
@@ -150,7 +150,7 @@ void parseGroup(const char *strGroup, // string of group information, formatted 
 			if (status == -1) {
 				//reset
 				status = 0;
-			} else if (strGroup[i] == ';') {
+			} else if (strGroup[0][i] == ';') {
 				//next group
 				(*numGroups)++;
 			}
@@ -161,7 +161,7 @@ void parseGroup(const char *strGroup, // string of group information, formatted 
 				status = 1;
 			case 1:
 			case 2:
-				*p1 = strGroup[i];
+				*p1 = strGroup[0][i];
 				p1++;
 				break;
 			default:
