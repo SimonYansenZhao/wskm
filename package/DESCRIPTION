@@ -25,4 +25,5 @@ Copyright: 2011-2014 Shenzhen Institutes of Advanced Technology Chinese
         Academy of Sciences
 LazyLoad: yes
 LazyData: yes
-URL: http://www.siat.ac.cn
+URL: http://english.siat.cas.cn/, https://github.com/SimonYansenZhao/wskm
+BugReports: https://github.com/SimonYansenZhao/wskm
