@@ -21,11 +21,8 @@ Description: Entropy weighted k-means (ewkm) is a weighted subspace
         features and weighting the group in addition to weighting
         individual features.
 License: GPL (>= 3)
-Copyright: 2011-2012 Shenzhen Institutes of Advanced Technology Chinese
+Copyright: 2011-2014 Shenzhen Institutes of Advanced Technology Chinese
         Academy of Sciences
 LazyLoad: yes
 LazyData: yes
 URL: http://www.siat.ac.cn
-Packaged: 2013-05-21 12:09:46 UTC; xjchen
-Repository: CRAN
-Date/Publication: 2012-04-27 06:28:29

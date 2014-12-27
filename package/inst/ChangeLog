@@ -1,3 +1,15 @@
+wskm (1.4.19) unstable; urgency=low
+
+  * Fix a bug in twkm where address of a pointer is used as its value
+
+  * Fix a bug in fgkm and twkm where rng doesn't work actually
+
+  * Fix a bug for incorrectly parsing string-format group infos
+
+  * Replace C rand() with R interface of RNG
+
+  * Provide vector-kind group infos for fgkm and twkm besides string-format ones
+
 wskm (1.4.11) unstable; urgency=low
 
   * Support initialising ewkm, fgkm, twkm with initial centers, much like kmeans
