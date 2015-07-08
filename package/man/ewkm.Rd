@@ -105,10 +105,10 @@
 }
 \references{
 
-  Jing Liping, M. K. Ng, J. Z. Huang, An Entropy Weighting k-Means
-  Algorithm for Subspace Clustering of High-Dimensional Sparse Data,
-  IEEE Transactions on Knowledge and Data Engineering, 19 (8), Aug 2007
-  pp 1026--1041.
+  Liping Jing, Michael K. Ng and Joshua Zhexue Huang (2007). An Entropy
+  Weighting $k$-Means Algorithm for Subspace Clustering of
+  High-Dimensional Sparse Data. IEEE Transactions on Knowledge and Data
+  Engineering, 19(8), 1026--1041.
   
 }
 \author{

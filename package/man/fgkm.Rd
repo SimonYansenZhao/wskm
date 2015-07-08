@@ -90,9 +90,9 @@
 }
 \references{
 
-  X. Chen, et al., A feature group weighting method for subspace
-  clustering of high-dimensional data, Pattern Recognition(2011),
-  doi:10.1016/j.patcog.2011.06.004
+  Xiaojun Chen, Yunming Ye, Xiaofei Xu and Joshua Zhexue Huang (2012). A
+  Feature Group Weighting Method for Subspace Clustering of
+  High-Dimensional Data. Pattern Recognition, 45(1), 434--446.
 
 }
 \author{
