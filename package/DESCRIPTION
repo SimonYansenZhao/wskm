@@ -12,17 +12,18 @@ Maintainer: He Zhao <Simon.Yansen.Zhao@gmail.com>
 Depends: R (>= 2.10), grDevices, stats, lattice, latticeExtra, clv
 Description: Entropy weighted k-means (ewkm) is a weighted subspace
         clustering algorithm that is well suited to very high
-        dimensional data. Weights are calculated as the importance of a
-        variable with regard to cluster membership.
-        The two-level variable weighting clustering algorithm TW-k-means (twkm)
-        introduces two types of weights, the weights on individual variables and
-        the weights on variable groups, and they are calculated during the clustering process.
-        The feature group weighted k-means (fgkm) extends this concept by grouping
+        dimensional data. Weights are calculated as the importance of
+        a variable with regard to cluster membership.  The two-level
+        variable weighting clustering algorithm tw-k-means (twkm)
+        introduces two types of weights, the weights on individual
+        variables and the weights on variable groups, and they are
+        calculated during the clustering process.  The feature group
+        weighted k-means (fgkm) extends this concept by grouping
         features and weighting the group in addition to weighting
         individual features.
 License: GPL (>= 3)
-Copyright: 2011-2014 Shenzhen Institutes of Advanced Technology Chinese
-        Academy of Sciences
+Copyright: 2011-2014 Shenzhen Institutes of Advanced Technology
+        Chinese Academy of Sciences
 LazyLoad: yes
 LazyData: yes
 URL: https://github.com/SimonYansenZhao/wskm, http://english.siat.cas.cn/
