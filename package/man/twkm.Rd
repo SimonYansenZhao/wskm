@@ -91,7 +91,7 @@
 \references{
 
   Xiaojun Chen, Xiaofei Xu, Joshua Zhexue Huang and Yunming Ye (2013).
-  TW-$k$-means: Automated Two-level Variable Weighting Clustering
+  TW-k-Means: Automated Two-level Variable Weighting Clustering
   Algorithm for Multiview Data. IEEE Transactions on Knowledge and Data
   Engineering, 25(4), 932--944.
   
