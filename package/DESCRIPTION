@@ -9,7 +9,7 @@ Authors@R: c(person("Graham", "Williams", email="graham.williams@togaware.com", 
 	person("Longfei", "Xiao", role="aut"),
 	person("He", "Zhao", email="Simon.Yansen.Zhao@gmail.com", role="cre"))
 Maintainer: He Zhao <Simon.Yansen.Zhao@gmail.com>
-Depends: R (>= 2.10), lattice, latticeExtra, clv
+Depends: R (>= 2.10), grDevices, stats, lattice, latticeExtra, clv
 Description: Entropy weighted k-means (ewkm) is a weighted subspace
         clustering algorithm that is well suited to very high
         dimensional data. Weights are calculated as the importance of a
@@ -25,5 +25,5 @@ Copyright: 2011-2014 Shenzhen Institutes of Advanced Technology Chinese
         Academy of Sciences
 LazyLoad: yes
 LazyData: yes
-URL: http://english.siat.cas.cn/, https://github.com/SimonYansenZhao/wskm
-BugReports: https://github.com/SimonYansenZhao/wskm
+URL: https://github.com/SimonYansenZhao/wskm, http://english.siat.cas.cn/
+BugReports: https://github.com/SimonYansenZhao/wskm/issues
