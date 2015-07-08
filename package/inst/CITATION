@@ -1,0 +1,80 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+pkgurl <- paste0("http://CRAN.R-project.org/package=", meta$Package)
+
+bibentry(bibtype = "Manual",
+         textVersion =
+             paste0("Graham Williams, Joshua Z Huang, Xiaojun Chen, Qiang Wang and Longfei Xiao (", year, "). ",
+                    meta$Package, ": ", meta$Title, ". ",
+                    note, ". ", pkgurl),
+         header = paste0("To cite \"", meta$Package, "\" in publications, please use:"),
+         key = "wskm2014hz",
+         title = "{wskm}: Weighted $k$-Means Clustering",
+         author = c(person("Graham", "Williams"),
+                    person("Joshua Zhexue", "Huang"),
+                    person("Xiaojun", "Chen"),
+                    person("Qiang", "Wang"),
+                    person("Longfei", "Xiao")),
+         year = year,
+         note = note,
+         url = pkgurl)
+
+bibentry(bibtype = "Article",
+         textVersion = paste0("Liping Jing, Michael K. Ng and Joshua Zhexue Huang (2007). ",
+             "An Entropy Weighting k-Means Algorithm for Subspace Clustering of High-Dimensional Sparse Data. ",
+             "IEEE Transactions on Knowledge and Data Engineering, 19(8), 1026--1041."),
+         header = "If ewkm() is used, please also cite:",
+         key = "ewkm2007lpj",
+         title = "An Entropy Weighting $k$-Means Algorithm for Subspace Clustering of High-Dimensional Sparse Data",
+         author = c(person("Liping", "Jing"),
+                    person("Michael K.", "Ng"),
+                    person("Joshua Zhexue", "Huang")),
+         journal = "{IEEE} Transactions on Knowledge and Data Engineering",
+         volume = "19",
+         number = "8",
+         pages = "1026--1041",
+         year = "2007",
+         url = "http://dx.doi.org/10.1109/TKDE.2007.1048",
+         doi = "10.1109/TKDE.2007.1048")
+
+bibentry(bibtype = "Article",
+         textVersion = paste0("Xiaojun Chen, Yunming Ye, Xiaofei Xu and Joshua Zhexue Huang (2012). ",
+             "A Feature Group Weighting Method for Subspace Clustering of High-Dimensional Data. ",
+             "Pattern Recognition, 45(1), 434--446."),
+         header = "If fgkm() is used, please also cite:",
+         key = "fgkm2012xjc",
+         title = "A Feature Group Weighting Method for Subspace Clustering of High-Dimensional Data",
+         author = c(person("Xiaojun", "Chen"),
+                    person("Yunming", "Ye"),
+                    person("Xiaofei", "Xu"),
+                    person("Joshua Zhexue", "Huang")),
+         journal = "Pattern Recognition",
+         volume = "45",
+         number = "1",
+         pages = "434--446",
+         year = "2012",
+         url = "http://dx.doi.org/10.1016/j.patcog.2011.06.004",
+         doi = "10.1016/j.patcog.2011.06.004")
+
+bibentry(bibtype = "Article",
+         textVersion = paste0("Xiaojun Chen, Xiaofei Xu, Joshua Zhexue Huang and Yunming Ye (2013). ",
+             "TW-k-Means: Automated Two-Level Variable Weighting Clustering Algorithm for Multiview Data. ",
+             "IEEE Transactions on Knowledge and Data Engineering, 25(4), 932--944."),
+         header = "If twkm() is used, please also cite:",
+         key = "twkm2013xjc",
+         title = "TW-$k$-Means: Automated Two-Level Variable Weighting Clustering Algorithm for Multiview Data",
+         author = c(person("Xiaojun", "Chen"),
+                    person("Xiaofei", "Xu"),
+                    person("Joshua Zhexue", "Huang"),
+                    person("Yunming", "Ye")),
+         journal = "IEEE Transactions on Knowledge and Data Engineering",
+         volume = "25",
+         number = "4",
+         pages = "932--944",
+         year = "2013",
+         url = "http://doi.ieeecomputersociety.org/10.1109/TKDE.2011.262",
+         doi = "10.1109/TKDE.2011.262")
+
+
+
+
