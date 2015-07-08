@@ -1,31 +1,42 @@
+wskm (1.4.28) unstable; urgency=low
+
+  * Add links to GitHub repository.
+
+  * Correct the NOTEs from the newly added check item of R-devel on 2015-06-29,
+    see http://developer.r-project.org/blosxom.cgi/R-devel/NEWS/2015/06/29#n2015-06-29.
+
+  * Update references.
+
+  * Add citation info.
+
 wskm (1.4.19) unstable; urgency=low
 
-  * Fix a bug in twkm where address of a pointer is used as its value
+  * Fix a bug in twkm where address of a pointer is used as its value.
 
-  * Fix a bug in fgkm and twkm where rng doesn't work actually
+  * Fix a bug in fgkm and twkm where rng doesn't work actually.
 
-  * Fix a bug for incorrectly parsing string-format group infos
+  * Fix a bug for incorrectly parsing string-format group infos.
 
-  * Replace C rand() with R interface of RNG
+  * Replace C rand() with R interface of RNG.
 
-  * Provide vector-kind group infos for fgkm and twkm besides string-format ones
+  * Provide vector-kind group infos for fgkm and twkm besides string-format ones.
 
 wskm (1.4.11) unstable; urgency=low
 
-  * Support initialising ewkm, fgkm, twkm with initial centers, much like kmeans
+  * Support initialising ewkm, fgkm, twkm with initial centers, much like kmeans.
 
-  * Change the name of argument for the number of clusters from "k" to "centers"
+  * Change the name of argument for the number of clusters from "k" to "centers".
 
 wskm (1.4.7) unstable; urgency=low
 
   * Fix bug: src/ewkm.c:288: runtime error: value 1.79769e+308 is
-	outside the range of representable values of type 'float'
+	outside the range of representable values of type 'float'.
 
 wskm (1.4.0) unstable; urgency=low
 
-  * Add predict.ewkm
+  * Add predict.ewkm.
 
-  * Update author infos
+  * Update author infos.
 
 wskm (1.3.0) unstable; urgency=low
 

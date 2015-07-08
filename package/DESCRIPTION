@@ -1,6 +1,6 @@
 Package: wskm
-Version: 1.4.10
-Date: 2014-07-31
+Version: 1.4.28
+Date: 2015-07-08
 Title: Weighted k-Means Clustering
 Authors@R: c(person("Graham", "Williams", email="graham.williams@togaware.com", role="aut"),
 	person("Joshua Z", "Huang", email="zx.huang@szu.edu.cn", role="aut"),
