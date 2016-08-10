@@ -34,7 +34,6 @@ bibentry(bibtype = "Article",
          number = "8",
          pages = "1026--1041",
          year = "2007",
-         url = "http://dx.doi.org/10.1109/TKDE.2007.1048",
          doi = "10.1109/TKDE.2007.1048")
 
 bibentry(bibtype = "Article",
@@ -53,7 +52,6 @@ bibentry(bibtype = "Article",
          number = "1",
          pages = "434--446",
          year = "2012",
-         url = "http://dx.doi.org/10.1016/j.patcog.2011.06.004",
          doi = "10.1016/j.patcog.2011.06.004")
 
 bibentry(bibtype = "Article",
@@ -72,7 +70,6 @@ bibentry(bibtype = "Article",
          number = "4",
          pages = "932--944",
          year = "2013",
-         url = "http://doi.ieeecomputersociety.org/10.1109/TKDE.2011.262",
          doi = "10.1109/TKDE.2011.262")
 
 
