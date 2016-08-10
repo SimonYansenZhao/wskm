@@ -19,7 +19,7 @@
     \code{";"} defines a group; or a vector of length of features, each
     element of the vector indicates the group of the feature. For
     example, \code{c(1,1,1,2,1,2,3,3,3)} is the same as
-    \code{"0-2,4;3,5;6-8"}, or even
+    \code{"0-2,4;3,5;6-8"}, or even\cr
     \code{c("a","a","a","b","a","b","c","c","c")}.}
   \item{lambda}{parameter of feature weight distribution.}
   \item{eta}{parameter of group weight distribution.}
