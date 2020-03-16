@@ -146,6 +146,7 @@ kmstats$corrected.rand
 
 # variation of information (VI) index
 kmstats$vi
+}
 
 }
 \keyword{

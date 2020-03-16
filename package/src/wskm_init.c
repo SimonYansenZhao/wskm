@@ -5,11 +5,11 @@
 #define CALLDEF(name, n) {#name, (DL_FUNC) &name, n}
 
 static const R_CMethodDef cMethods[] = {
-    CALLDEF(ewkm, 15),
+    CALLDEF(ewkm, 17),
 	CALLDEF(fgkm, 22),
 	CALLDEF(twkm, 22),
     CALLDEF(parseGroup, 3),
-    NULL
+    {NULL, NULL, 0}
 };
 
 

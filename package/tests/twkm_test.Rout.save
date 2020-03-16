@@ -1,13 +1,11 @@
 
-R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
-Copyright (C) 2014 The R Foundation for Statistical Computing
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -17,17 +15,12 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-[Previously saved workspace restored]
-
 > # rm(list=ls())
 > 
 > library("wskm")
 Loading required package: lattice
 Loading required package: latticeExtra
-Loading required package: RColorBrewer
-Loading required package: clv
-Loading required package: cluster
-Loading required package: class
+Loading required package: fpc
 > x_short <- scale(fgkm.sample)
 > strGroup_short <- "0-9;10-19;20-49"
 > strGroup_short4 <- "10-19;0-9;20-49"
@@ -71,4 +64,4 @@ Loading required package: class
 > 
 > proc.time()
    user  system elapsed 
-  1.279   0.054   1.322 
+  0.963   0.050   1.002 

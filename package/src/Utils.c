@@ -88,7 +88,7 @@ void parseGroup(const char **strGroup, // string of group information, formatted
 		int *groupInfo // group assignment
 		) {
 
-	int length, index, end, i = 0, j;
+	int length, index = -1, end, i = 0, j;
 	char *buffer, *p1;
 	buffer = (char *)malloc(20*sizeof(char));
 

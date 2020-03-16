@@ -29,6 +29,7 @@
 *.Rproj
 .Rhistory
 .RData
+*.Rcheck
 
 # Eclipse
 .cproject
