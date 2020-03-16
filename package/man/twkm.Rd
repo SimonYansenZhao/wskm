@@ -80,7 +80,7 @@
   of a disappearing cluster resulting from one or more k-means having no
   observations associated with it. An number here greater than zero
   indicates that the algorithm is not converging on a clustering for the
-  given k. It is recommeded that k be reduced.}
+  given k. It is recommended that k be reduced.}
   
   \item{totalIterations}{The total number of iterations over all
   restarts.}

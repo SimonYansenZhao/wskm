@@ -6,7 +6,7 @@
 // maintains the package.
 
 // Copyright (c) 2011 Shenzhen Institutes of Advanced Technology
-// Chinese Academny of Sciences
+// Chinese Academy of Sciences
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -344,7 +344,7 @@ void ewkm( // Inputs ----------------------------------------------------------
 				weights[l] = 1.0 / *nc;
 		}
 
-		// Update weights of attibutes of each cluster
+		// Update weights of attributes of each cluster
 
 		updWeights(x, nr, nc, k, lambda, cluster, centers, weights);
 
