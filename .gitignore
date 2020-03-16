@@ -1,3 +1,5 @@
+*~
+
 # Object files
 *.o
 *.ko
@@ -22,8 +24,13 @@
 *.x86_64
 *.hex
 
-*~
+# R
 .Rproj.user
 *.Rproj
 .Rhistory
 .RData
+
+# Eclipse
+.cproject
+.project
+.settings/
