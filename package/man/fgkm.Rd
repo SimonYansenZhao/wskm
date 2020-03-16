@@ -130,19 +130,19 @@ myfgkm$restarts
 myfgkm$totiters
 myfgkm$totss
 
-# Use a cluster validation method from package 'clv'.
+# Use a cluster validation method from package 'fpc'.
 
 # real.cluster is the real class label of the data 'fgkm.sample'.
 real.cluster <- rep(1:3, each=200)
 
-# std.ext() returns four values SS, SD, DS, DD.
-std <- std.ext(as.integer(myfgkm$cluster), real.cluster)
+# cluster.stats() computes several distance based statistics.
+kmstats <- cluster.stats(d=dist(x), as.integer(myfgkm$cluster), real.cluster)
 
-# Rand index 
-clv.Rand(std)
+# corrected Rand index
+kmstats$corrected.rand
 
-# Jaccard coefficient
-clv.Jaccard(std)
+# variation of information (VI) index
+kmstats$vi
 
 }
 \keyword{

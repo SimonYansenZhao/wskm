@@ -133,20 +133,19 @@ mytwkm$restarts
 mytwkm$totiters
 mytwkm$totss
 
-# Use a cluster validation method from package 'clv'.
+# Use a cluster validation method from package 'fpc'.
 
 # real.cluster is the real class label of the data 'twkm.sample'.
 real.cluster <- twkm.sample[,410]
 
-# std.ext() returns four values SS, SD, DS, DD.
-std <- std.ext(as.integer(mytwkm$cluster), real.cluster)
+# cluster.stats() computes several distance based statistics.
+kmstats <- cluster.stats(d=dist(x), as.integer(mytwkm$cluster), real.cluster)
 
-# Rand index 
-clv.Rand(std)
+# corrected Rand index
+kmstats$corrected.rand
 
-# Jaccard coefficient
-clv.Jaccard(std)
-}
+# variation of information (VI) index
+kmstats$vi
 
 }
 \keyword{
