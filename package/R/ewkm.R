@@ -21,7 +21,7 @@ ewkm <- function(x, centers, lambda=1, maxiter=100, delta=0.00001, maxrestart=10
 
   k <- as.integer(k)
   
-  Z <- .C("ewkm",
+  Z <- .C(WSKM_ewkm,
           x=as.double(as.matrix(x)), # needs to accept a data.frame
           nr=nr,
           nc=nc,
@@ -37,9 +37,8 @@ ewkm <- function(x, centers, lambda=1, maxiter=100, delta=0.00001, maxrestart=10
           weights=double(k * nc),
           restarts=integer(1),
           totiters=integer(1),
-		  totss=double(1),
-		  withinss=double(k),
-          PACKAGE="wskm")
+          totss=double(1),
+          withinss=double(k))
 
   centers <- matrix(Z$centers, ncol=ncol(x))
   colnames(centers) <- vars

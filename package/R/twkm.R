@@ -26,7 +26,7 @@ twkm <- function(x, centers, groups, lambda, eta, maxiter=100, delta=0.000001, m
   
   # get the setting of feature group
   if (is.character(groups) && length(groups) == 1) {
-    G <- .C("parseGroup",as.character(groups),numGroups=integer(1), groupInfo=integer(nc),PACKAGE="wskm")
+    G <- .C(WSKM_parseGroup,as.character(groups),numGroups=integer(1), groupInfo=integer(nc))
   } else if (is.vector(groups) && length(groups) == nc) {
     G <- list()
     grps <- as.factor(groups)
@@ -36,7 +36,7 @@ twkm <- function(x, centers, groups, lambda, eta, maxiter=100, delta=0.000001, m
   }
 
   set.seed(seed)
-  Z <- .C("twkm",
+  Z <- .C(WSKM_twkm,
           x = as.double(as.matrix(x)),
           nr,
           nc,
@@ -59,9 +59,7 @@ twkm <- function(x, centers, groups, lambda, eta, maxiter=100, delta=0.000001, m
           totiters = integer(1),
           totalCost = double(1),
           totss = double(1),
-		  withiness = double(k),
-          PACKAGE="wskm"
-          )
+          withiness = double(k))
        
   centers <- matrix( Z$centers)
   dim(centers) <- c(k, nc)
