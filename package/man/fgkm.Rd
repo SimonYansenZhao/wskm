@@ -145,7 +145,5 @@ kmstats$corrected.rand
 kmstats$vi
 
 }
-\keyword{
-  soft subspace clustering, feature group
-}
-
+\concept{soft subspace clustering}
+\concept{feature group}

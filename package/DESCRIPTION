@@ -1,5 +1,5 @@
 Package: wskm
-Version: 1.4.35
+Version: 1.4.36
 Date: 2020-03-16
 Title: Weighted k-Means Clustering
 Authors@R: c(person("Graham", "Williams", email="graham.williams@togaware.com", role="aut"),
@@ -10,17 +10,22 @@ Authors@R: c(person("Graham", "Williams", email="graham.williams@togaware.com", 
 	person("He", "Zhao", email="Simon.Yansen.Zhao@gmail.com", role="cre"))
 Maintainer: He Zhao <Simon.Yansen.Zhao@gmail.com>
 Depends: R (>= 2.10), grDevices, stats, lattice, latticeExtra, fpc
-Description: Entropy weighted k-means (ewkm) is a weighted subspace
-        clustering algorithm that is well suited to very high
-        dimensional data. Weights are calculated as the importance of
-        a variable with regard to cluster membership.  The two-level
-        variable weighting clustering algorithm tw-k-means (twkm)
-        introduces two types of weights, the weights on individual
-        variables and the weights on variable groups, and they are
-        calculated during the clustering process.  The feature group
-        weighted k-means (fgkm) extends this concept by grouping
-        features and weighting the group in addition to weighting
-        individual features.
+Description: Entropy weighted k-means (ewkm) by Liping Jing, Michael
+        K. Ng and Joshua Zhexue Huang (2007)
+        <doi:10.1109/TKDE.2007.1048> is a weighted subspace clustering
+        algorithm that is well suited to very high dimensional data.
+        Weights are calculated as the importance of a variable with
+        regard to cluster membership.  The two-level variable
+        weighting clustering algorithm tw-k-means (twkm) by Xiaojun
+        Chen, Xiaofei Xu, Joshua Zhexue Huang and Yunming Ye (2013)
+        <doi:10.1109/TKDE.2011.262> introduces two types of weights,
+        the weights on individual variables and the weights on
+        variable groups, and they are calculated during the clustering
+        process.  The feature group weighted k-means (fgkm) by Xiaojun
+        Chen, Yunminng Ye, Xiaofei Xu and Joshua Zhexue Huang (2012)
+        <doi:10.1016/j.patcog.2011.06.004> extends this concept by
+        grouping features and weighting the group in addition to
+        weighting individual features.
 License: GPL (>= 3)
 Copyright: 2011-2014 Shenzhen Institutes of Advanced Technology
         Chinese Academy of Sciences

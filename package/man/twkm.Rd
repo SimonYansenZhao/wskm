@@ -149,7 +149,4 @@ kmstats$vi
 }
 
 }
-\keyword{
-  variable weighting
-}
-
+\concept{variable weighting}
