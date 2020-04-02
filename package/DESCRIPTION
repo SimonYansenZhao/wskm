@@ -1,5 +1,5 @@
 Package: wskm
-Version: 1.4.37
+Version: 1.4.39
 Date: 2020-04-02
 Title: Weighted k-Means Clustering
 Authors@R: c(person("Graham", "Williams", email="graham.williams@togaware.com", role="aut"),

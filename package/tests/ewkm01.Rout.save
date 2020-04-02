@@ -77,8 +77,9 @@ Clustering vector:
 [226]  7  6  8  6  6  1  6  6  6  6  7  6  6  6 10  3  6  6  1  9  6  8  6
 
 Within cluster sum of squares by cluster:
- [1] 0 0 0 0 0 0 0 0 0 0
- (between_SS / total_SS =   NaN %)
+ [1]  10873.352   1572.920   6415.563      0.000  11413.478 155257.464
+ [7]  15490.665   4789.961   1386.567   2797.708
+ (between_SS / total_SS =  15.9 %)
 
 Available components:
 
@@ -141,8 +142,9 @@ Clustering vector:
 [226]  7  6  8  6  6  1  6  6  6  6  7  6  6  6 10  3  6  6  1  9  6  8  6
 
 Within cluster sum of squares by cluster:
- [1] 0 0 0 0 0 0 0 0 0 0
- (between_SS / total_SS =   NaN %)
+ [1]  10873.352   1572.920   6415.563      0.000  11413.478 155257.464
+ [7]  15490.665   4789.961   1386.567   2797.708
+ (between_SS / total_SS =  15.9 %)
 
 Available components:
 
@@ -205,8 +207,9 @@ Clustering vector:
 [226]  7  6  8  6  6  1  6  6  6  6  7  6  6  6 10  3  6  6  1  9  6  8  6
 
 Within cluster sum of squares by cluster:
- [1] 0 0 0 0 0 0 0 0 0 0
- (between_SS / total_SS =   NaN %)
+ [1]  10873.352   1572.920   6415.563      0.000  11413.478 155257.464
+ [7]  15490.665   4789.961   1386.567   2797.708
+ (between_SS / total_SS =  15.9 %)
 
 Available components:
 
@@ -269,8 +272,9 @@ Clustering vector:
 [226]  7  6  8  6  6  1  6  6  6  6  7  6  6  6 10  3  6  6  1  9  6  8  6
 
 Within cluster sum of squares by cluster:
- [1] 0 0 0 0 0 0 0 0 0 0
- (between_SS / total_SS =   NaN %)
+ [1]  10873.352   1572.920   6415.563      0.000  11413.478 155257.464
+ [7]  15490.665   4789.961   1386.567   2797.708
+ (between_SS / total_SS =  15.9 %)
 
 Available components:
 
@@ -282,4 +286,4 @@ Available components:
 > 
 > proc.time()
    user  system elapsed 
-  0.785   0.058   0.837 
+  0.697   0.077   0.765 
