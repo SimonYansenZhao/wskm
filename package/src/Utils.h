@@ -33,7 +33,7 @@ void sum_squares(const double *x, // Data matrix
 		double *withiness // Vector of within-cluster sum of squares, one component per cluster.
 		);
 
-void parseGroup(const char *strGroup, // string of group information, formatted as "0,1,2,4;3,5;6,7,8" or "0-2,4;3,4,8;6-8", where ";" defines a group;
+void parseGroup(const char **strGroup, // string of group information, formatted as "0,1,2,4;3,5;6,7,8" or "0-2,4;3,4,8;6-8", where ";" defines a group;
 		int *numGroups, // no. of groups
 		int *groupInfo // group assignment
 		);
