@@ -126,7 +126,7 @@ void updPartition(  // Inputs
 	int i, j, l;
 
 	// We record the cluster number with the smallest distance to a
-	// certain object and store the smallest distence between clusers.
+	// certain object and store the smallest distance between clusters.
 
 	double o_dist, min_dist;
 
@@ -266,23 +266,25 @@ void updWeights( // Inputs -----------------------------------------------------
 // separate main.c can be used for stand alone testing.
 
 void ewkm( // Inputs ----------------------------------------------------------
-		double *x, 		// Numeric matrix as vector by col (nr*nc)
-		int *nr, 		// Number of rows
-		int *nc, 		// Number of columns
-		int *k, 		// Number of clusters
-		double *lambda, 	// Learning rate
-		int *maxiter, 	// Maximum number of iterations
-		double *delta, 	// Minimum change below which iteration stops
-		int *maxrestart,      // Maximum number of restarts
-		int *init,            // Initial k prototypes.
+		double *x,         // Numeric matrix as vector by col (nr*nc)
+		int *nr,           // Number of rows
+		int *nc,           // Number of columns
+		int *k,            // Number of clusters
+		double *lambda,    // Learning rate
+		int *maxiter,      // Maximum number of iterations
+		double *delta,     // Minimum change below which iteration stops
+		int *maxrestart,   // Maximum number of restarts
+		int *init,         // Initial k prototypes.
 		// Outputs ---------------------------------------------------------
-		int *iterations,	// Number of iterations
-		int *cluster, 	// Cluster assignment for each obs (nr)
-		double *centers, 	// Cluster centers (k*nc)
-		double *weights, 	// Variable weights (k*nc)
-		int *restarts,	// Number of restarts
-		int *totiters)	// Number of iterations including restarts
-{
+		int *iterations,   // Number of iterations
+		int *cluster,      // Cluster assignment for each obs (nr)
+		double *centers,   // Cluster centers (k*nc)
+		double *weights,   // Variable weights (k*nc)
+		int *restarts,	   // Number of restarts
+		int *totiters,     // Number of iterations including restarts
+		double *totss,     // Total sum of squares
+		double *withiness  // Vector of sum of square in every cluster
+		) {
 	int l, full;
 
 	int iteration; // Count of iterations.
@@ -300,7 +302,7 @@ void ewkm( // Inputs ----------------------------------------------------------
 	//	srand(unif_rand() * RAND_MAX);
 
 	// Initialize the prototypes. The user can pass in a list of k
-	// indicies as the row indicies for the initial protoypes. A
+	// indexes as the row indexes for the initial prototypes. A
 	// single 0 indicates to use random initialisation.
 
 	if (*init == 0)
@@ -367,6 +369,9 @@ void ewkm( // Inputs ----------------------------------------------------------
 	// increased.
 	if (iteration == *maxiter + 1)
 		*totiters = *totiters - 1;
+
+	// Calculate sum of squares
+	sum_squares(x, nr, nc, k, cluster, centers, totss, withiness);
 
 	//TODO enable it for R
 	// Write out the R random number data.

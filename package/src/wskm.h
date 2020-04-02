@@ -2,22 +2,25 @@
 #include "Utils.h"
 
 void ewkm( // Inputs ----------------------------------------------------------
-		double *x, 		// Numeric matrix as vector by col (nr*nc)
-		int *nr, 		// Number of rows
-		int *nc, 		// Number of columns
-		int *k, 		// Number of clusters
-		double *lambda, 	// Learning rate
-		int *maxiter, 	// Maximum number of iterations
-		double *delta, 	// Minimum change below which iteration stops
-		int *maxrestart,      // Maximum number of restarts
-		int *init,            // Initial k prototypes.
+		double *x,         // Numeric matrix as vector by col (nr*nc)
+		int *nr,           // Number of rows
+		int *nc,           // Number of columns
+		int *k,            // Number of clusters
+		double *lambda,    // Learning rate
+		int *maxiter,      // Maximum number of iterations
+		double *delta,     // Minimum change below which iteration stops
+		int *maxrestart,   // Maximum number of restarts
+		int *init,         // Initial k prototypes.
 		// Outputs ---------------------------------------------------------
-		int *iterations,	// Number of iterations
-		int *cluster, 	// Cluster assignment for each obs (nr)
-		double *centers, 	// Cluster centers (k*nc)
-		double *weights, 	// Variable weights (k*nc)
-		int *restarts,	// Number of restarts
-		int *totiters);	// Number of iterations including restarts
+		int *iterations,   // Number of iterations
+		int *cluster,      // Cluster assignment for each obs (nr)
+		double *centers,   // Cluster centers (k*nc)
+		double *weights,   // Variable weights (k*nc)
+		int *restarts,	   // Number of restarts
+		int *totiters,     // Number of iterations including restarts
+		double *totss,     // Total sum of squares
+		double *withiness  // Vector of sum of square in every cluster
+		);
 
 void fgkm(const double *x, const int *nr, const int *nc, const int *k,
 		const double *lambda, const double *eta, const int *numGroups,
