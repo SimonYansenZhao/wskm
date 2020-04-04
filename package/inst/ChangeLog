@@ -1,3 +1,19 @@
+wskm (1.4.40) unstable; urgency=low
+
+  * Fix bug: mismathced number of parameters between R and C code of ewkm.
+
+wskm (1.4.37) unstable; urgency=low
+
+  * Fix unmatched function declaration.
+
+wskm (1.4.36) unstable; urgency=low
+
+  * Remove dependency on clv.
+
+  * Add native routine registration.
+
+  * Update documentation.
+
 wskm (1.4.28) unstable; urgency=low
 
   * Add links to GitHub repository.
